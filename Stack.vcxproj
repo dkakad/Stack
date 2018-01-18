@@ -144,11 +144,13 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Node.cpp" />
+    <ClCompile Include="queue.cpp" />
     <ClCompile Include="Singly.cpp" />
     <ClCompile Include="Stack.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Node.h" />
+    <ClInclude Include="queue.h" />
     <ClInclude Include="Singly.h" />
     <ClInclude Include="Stack.h" />
   </ItemGroup>

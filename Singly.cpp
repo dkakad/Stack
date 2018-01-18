@@ -77,7 +77,7 @@ int Singly<T>::getSize() {
 /*
  * A function that adds a node to the end of the Linked List.
  * @param data -> The data that is contained in the node to be added to the end
- *				 The function takes care of creating a Node from the data
+ *				  The function takes care of creating a Node from the data
  */
 template <typename T>
 void Singly<T>::addEnd(T data) {
@@ -90,6 +90,27 @@ void Singly<T>::addEnd(T data) {
 	else {
 		tail->setNext(temp);
 		tail = temp;
+		size++;
+	}
+}
+
+/*
+* A function that adds a node to the start of the Linked List.
+* @param data -> The data that is contained in the node to be added to the start
+*				 The function takes care of creating a Node from the data
+*/
+
+template <typename T>
+void Singly<T>::addStart(T data) {
+	Node<T> *temp = new Node<T>(data);
+	if (head == nullptr) {
+		head = temp;
+		tail = temp;
+		size++;
+	}
+	else {
+		temp->setNext(head);
+		head = temp;
 		size++;
 	}
 }
@@ -134,4 +155,24 @@ void Singly<T>::deleteEnd() {
 	temp->setNext(nullptr);
 	delete tail;
 	tail = temp;
+}
+
+/*
+* A function to delete the first node of the linked list.
+*/
+
+template <typename T>
+void Singly<T>::deleteStart() {
+	Node<T> *temp = head;
+	if (temp == nullptr) {
+		return;
+	}
+	else if (temp->getNext() == nullptr) {
+		delete temp;
+	}
+	else {
+		Node<T> *second = head->getNext();
+		delete head;
+		head = second;
+	}
 }

@@ -50,5 +50,7 @@ public:
 	void setTail(Node<T> *newTail);
 	Node<T> *getLast();
 	void addEnd(T data);
+	void addStart(T data);
 	void deleteEnd();
+	void deleteStart();
 };

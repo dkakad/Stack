@@ -14,7 +14,7 @@
 
 template <typename T>
 class Node {
-
+protected:
 	/*
 	 * The generic data field of the Node.
 	 */
