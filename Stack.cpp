@@ -145,3 +145,35 @@ T Stack<T>::getMin() {
 	T min = minMap->getTail()->getData();
 	return min;
 }
+
+/*
+* A function that sorts a stack without using any additional data structure except
+* another stack.
+* @return temp -> The sorted stack
+*/
+template <typename T>
+Stack<T>* Stack<T>::sortStack() {
+	Stack<T>* temp = new Stack<T>();
+	int count = 0;
+	while (!isEmpty()) {
+		T data = pop();
+		if (temp->isEmpty()) {
+			temp->push(data);
+		}
+		else {
+			while (temp->peek() > data && !(temp->isEmpty())) {
+				T data_temp = temp->pop();
+				count++;
+				push(data_temp);
+			}
+			temp->push(data);
+			while (count > 0) {
+				T newData = pop();
+				temp->push(newData);
+				count--;
+			}
+		}
+		count = 0;
+	}
+	return temp;
+}

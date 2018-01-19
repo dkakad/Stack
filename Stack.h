@@ -18,6 +18,7 @@ class Stack {
 	* The singly linked list which acts a LIFO stack.
 	*/
 	Singly<T> *list;
+
 	/*
 	* The LIFO stack that keeps track of the min value of the main stack.
 	*/
@@ -33,4 +34,5 @@ public:
 	T peek();
 	T getMin();
 	bool isEmpty();
+	Stack<T> * sortStack();
 };
